@@ -90,10 +90,50 @@ print(total)
 # GPAO: Get, Parse, Analyze, Output
 # Get
 total = 0
+# for every number below 1000
 for n in range(1000):
     # Parse (NOP)
     # Analyze
+    # if the number is a mulitple of 3 or 5
     if n % 3 == 0 or n % 5 == 0:
+        # add it to sum
         total += n
 # Output
+# print sum
 print(total)
+
+for n in range(10):
+    if n > 5:
+        break  # stop the loop (finding)
+    print(n)
+
+for n in range(10):
+    if n % 2 == 0:
+        continue  # move to next iteration (filtering)
+    print(n)
+
+n = 1
+while n < 5:
+    print(n)
+    n += 1
+
+n = 1
+while True:
+    if n > 5:
+        break
+    print(n)
+    n += 1
+
+# unpacking
+hero1, hero2 = 'Clark', 'Bruce'
+print(hero1, hero2)
+
+hero1, hero2 = hero2, hero1
+print(hero1, hero2)
+
+# By considering the terms in the Fibonacci sequence whose values do not exceed
+# four million, find the sum of the even-valued terms.
+# Answer:  4613732
+
+# GPAO
+# Write the solution in English, then translate to Python
