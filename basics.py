@@ -86,3 +86,14 @@ print(total)
 # Find the sum of all the multiples of 3 or 5 below 1000.
 # Answer: 233168
 # print(233168)
+
+# GPAO: Get, Parse, Analyze, Output
+# Get
+total = 0
+for n in range(1000):
+    # Parse (NOP)
+    # Analyze
+    if n % 3 == 0 or n % 5 == 0:
+        total += n
+# Output
+print(total)
