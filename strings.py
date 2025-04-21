@@ -105,13 +105,8 @@ loc = ' las vegas strip\n'
 clean_loc = loc.strip()
 print(f'|{clean_loc}|')
 
-# You create a function with "def" keyword
-# If there's no "return", the function will return None
-def inc(n):
-    return n + 1
-
 for c in 'I ♡ Python':
-    print(c)
+    print(c)  # c is a str
 
 # Exercise: How many "a" (ignoring case are in "road.txt")
 
@@ -126,3 +121,53 @@ Until it joins some larger way
 Where many paths and errands meet.
 And whither then? I cannot say.
 '''
+# Bilbo Baggins (LOTR)
+total = 0
+for c in poem:
+    if c.lower() == 'a':
+        total += 1
+print(total)
+
+text = 'I ♡ Python'
+print(len(text))
+
+# str -> bytes
+data = text.encode()
+print(len(data))
+
+# bytes -> str
+print(data.decode())
+
+# Work with bytes only at the edges of your program
+# (network, files, ...)
+# send: str->bytes (encode)
+# receive: bytes->str (decode)
+# internally work with str
+
+# shalom (Hebrew: Hello, Peace)
+greet = 'שלום'
+print(greet[0])
+
+# You create a function with "def" keyword
+# If there's no "return", the function will return None
+def inc(n):
+    return n + 1
+
+# Write a function that sums numbers in a string
+
+def sum_digits(s):
+    total = 0
+    for c in s:
+        d = int(c)  # str -> int
+        total += d
+    return total
+
+text = '123'
+print(sum_digits(text))
+
+def banner(text, width):
+    ... # TODO: Your code goes here
+
+banner('Hi', 6)
+#   Hi
+# ------

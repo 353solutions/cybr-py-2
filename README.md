@@ -28,6 +28,10 @@ Miki Tebeka
 
 TBD
 
+### Exercise
+
+Solve [Euler 8](https://projecteuler.net/problem=8)
+Solution: 23514624000
 
 <!--
 ### Exercises
