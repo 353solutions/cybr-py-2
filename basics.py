@@ -137,3 +137,14 @@ print(hero1, hero2)
 
 # GPAO
 # Write the solution in English, then translate to Python
+# Get: Fibonacci number not larget than 4M
+total = 0
+a, b = 1, 2
+while a <= 4_000_000:
+    # Parse (NOP)
+    # Analyzer
+    if a % 2 == 0:
+        total += a
+    a, b = b, a + b
+# Output
+print(total)
