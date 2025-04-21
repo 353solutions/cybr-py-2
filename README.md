@@ -26,14 +26,17 @@ Miki Tebeka
 
 ### Code
 
-TBD
+
+- [basics.py](basics.py) - Variables, conditions, looping
+- [strings.py](strings.py) - Working with text
+- [looping.py](looping.py) - Looping utilities
 
 ### Exercises
 
-Solve [Euler 4](https://projecteuler.net/problem=4) 
+Solve [Euler 4](https://projecteuler.net/problem=4)  
 Solution: 906609
 
-Solve [Euler 8](https://projecteuler.net/problem=8) 
+Solve [Euler 8](https://projecteuler.net/problem=8)  
 Solution: 23514624000
 
 
