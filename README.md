@@ -30,58 +30,26 @@ TBD
 
 ### Exercises
 
-Solve [Euler 4](https://projecteuler.net/problem=4)
+Solve [Euler 4](https://projecteuler.net/problem=4) 
 Solution: 906609
 
-Solve [Euler 8](https://projecteuler.net/problem=8)
+Solve [Euler 8](https://projecteuler.net/problem=8) 
 Solution: 23514624000
 
-<!--
-### Exercises
-
-#### Word Frequency
-
-What is the most common word in `data/road.txt` ignoring case?
-
-#### Stocks
-
-Look at data/stocks.csv
-
-You can read the content using the following code:
-
-```python
-with open('data/stocks.csv') as fp:
-    data = fp.read()
-```
-
-Answer the following questions:
-- Print sorted unique list of symbols (CSCO ...)
-- Print how many stocks of CSCO we own (symbol)
-- Print how much money we've invested (price * volume)
-
-Using the data from `data/prices.csv`, print how much we've gained or lost.
--->
 
 ### Links
 
+- IDEs
+    - [PyCharm](https://www.jetbrains.com/pycharm/)
+    - [VSCode](https://code.visualstudio.com/) + [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+    - [Google Colab](https://colab.research.google.com/) - Notebooks in the cloud
 - [How to Think Like a Computer Scientist: Interactive Edition](https://runestone.academy/ns/books/published/thinkcspy/index.html)
 - [The Python Tutorial](https://docs.python.org/3/tutorial/index.html)
     - [text](https://docs.python.org/3/tutorial/introduction.html#text)
     - [lists](https://docs.python.org/3/tutorial/introduction.html#lists)
     - [Errors & exceptions](https://docs.python.org/3/tutorial/errors.html)
-- [pythontutor](https://pythontutor.com/) - Visualize Python execution
-- [itertools module](https://docs.python.org/3/library/itertools.html#itertools.count)
-    - Read and understand the "Itertools Recipes" section
-- Iterators
-    - [Iterators](https://docs.python.org/3/tutorial/classes.html#iterators) in the Python tutorial
-    - [itertools](https://docs.python.org/3/library/itertools.html) - Iterator utilities (good reading ☺)
-    - [Generator Tricks for System Programmers](http://www.dabeaz.com/generators/)
-    - [Generators: The Final Frontier](https://www.youtube.com/watch?v=D1twn9kLmYg)
 - [Python Type Conversion](https://www.mermaidchart.com/raw/493b268f-89ca-4129-b83a-8d8cd64602e0?theme=light&version=v0.1&format=svg)
 - [List of Unicode Characters](https://en.wikipedia.org/wiki/List_of_Unicode_characters)
-- [Project Euler](https://projecteuler.net/)
-- [Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
-- [Google Colab](https://colab.research.google.com/) - Notebooks in the cloud
 - Programming Exercises:
     - [exercism](https://exercism.org/tracks/python/exercises)
     - [LeetCode](https://leetcode.com/problemset/all/)
