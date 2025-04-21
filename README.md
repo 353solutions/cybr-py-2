@@ -28,7 +28,10 @@ Miki Tebeka
 
 TBD
 
-### Exercise
+### Exercises
+
+Solve [Euler 4](https://projecteuler.net/problem=4)
+Solution: 906609
 
 Solve [Euler 8](https://projecteuler.net/problem=8)
 Solution: 23514624000

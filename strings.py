@@ -166,8 +166,22 @@ text = '123'
 print(sum_digits(text))
 
 def banner(text, width):
-    ... # TODO: Your code goes here
+    print(f'{text:^{width}}')
+    print('-' * width)
+
 
 banner('Hi', 6)
+
+
+def banner2(text, width):
+    padding_size = (width - len(text)) // 2
+    padding = ' ' * padding_size
+    print(padding + text)
+    print('-' * width)
+
+banner2('Hi', 6)
 #   Hi
 # ------
+
+print('hi', end='')
+print('bye')
