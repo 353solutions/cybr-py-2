@@ -166,4 +166,3 @@ Example API: `https://api.qrserver.com/v1/create-qr-code/?data=MECARD:N:Bunny,Bu
 
 - [http.log.gz](data/http.log.gz)
 - `https://api.github.com/users/tebeka`
--->
