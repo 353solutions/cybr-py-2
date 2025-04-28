@@ -116,4 +116,23 @@ And whither then I cannot say
 # Bilbo Baggins (LOTR)
 
 # Exercise: What is the most common word
-# in the poem?
+# in the poem? Extra: ignore case
+
+# word -> count
+freq = {}
+
+# Get
+words = poem.split()
+for word in words:
+    word = word.lower()
+    # freq[word] += 1  # will err
+    freq[word] = freq.get(word, 0) + 1
+
+max_word, max_count = '', 0
+# Analyze
+for word, count in freq.items():
+    if count > max_count:
+        max_word, max_count = word, count
+
+# Output
+print(max_word)
