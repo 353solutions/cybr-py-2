@@ -26,7 +26,6 @@ Miki Tebeka
 
 ### Code
 
-
 - [basics.py](basics.py) - Variables, conditions, looping
 - [strings.py](strings.py) - Working with text
 - [looping.py](looping.py) - Looping utilities
@@ -67,9 +66,6 @@ Solution: 23514624000
 - ☺
 - ♡
 
-<!--
----
-
 # Day 2: Working with Python
 
 ### Agenda
@@ -88,6 +84,8 @@ Solution: 23514624000
 TBD
 
 
+
+<!--
 ### Exercises
 
 #### Count Errors
@@ -107,7 +105,6 @@ piweba4y.prodigy.com - - [01/Aug/1995:00:00:10 -0400] "GET /images/launchmedium.
 slppp6.intermind.net - - [01/Aug/1995:00:00:11 -0400] "GET /history/skylab/skylab-small.gif HTTP/1.0" 200 9202
 ```
 
-<!--
 #### Stock Tweets
 
 related
@@ -123,3 +120,29 @@ Write a function `generate_qrs(input_file, output_dir)` that will generate a QR 
 Example MCARD: `MECARD:N:Bunny,Bugs;TEL:555-555-5555;EMAIL:bugs@looney.com;;`
 Example API: `https://api.qrserver.com/v1/create-qr-code/?data=MECARD:N:Bunny,Bugs;TEL:555-555-5555;EMAIL:bugs@looney.com;;`
 -->
+
+### Links
+
+- Programming Exercises:
+    - [exercism](https://exercism.org/tracks/python/exercises)
+    - [LeetCode](https://leetcode.com/problemset/all/)
+    - [Codewars](https://www.codewars.com/kata)
+    - [Project Euler](https://projecteuler.net/archives)
+- [HTTP in cats](https://http.cat/)
+- [The Zen of Python](https://www.python.org/dev/peps/pep-0020/) (or `import this`)
+- [Year 2038 problem](https://en.wikipedia.org/wiki/Year_2038_problem)
+- [List comprehension](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions) in the Python tutorial
+- [Defining functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions) in the Python tutorial
+- [pathlib](https://docs.python.org/3/library/pathlib.html) module - Handling file paths
+- [shutil](https://docs.python.org/3/library/shutil.html) module - shell like utlities
+- [Context Managers and Python's "with" Statement](https://realpython.com/python-with-statement/)
+- [Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html) in the Python tutorial
+- [Modules](https://docs.python.org/3/tutorial/modules.html) in the Python tutorial
+- [JSON](https://www.json.org/json-en.html) specification
+- Python's [json](https://docs.python.org/3/library/json.html) module
+- [A typical HTTP session](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Session)
+
+### Data & Other
+
+- [http.log.gz](data/http.log.gz)
+- `https://api.github.com/users/tebeka`
