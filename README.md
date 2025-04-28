@@ -10,6 +10,8 @@ Miki Tebeka
 - [LinkedIn Learning Classes](https://www.linkedin.com/learning/instructors/miki-tebeka)
 - [Books](https://pragprog.com/search/?q=miki+tebeka)
 
+[Colab notebook](https://colab.research.google.com/drive/11YGDyd5RB_qE3tTrB8RJQX5tPE_NMgUU)
+
 ---
 
 ## Day 1: Getting Started
@@ -81,8 +83,13 @@ Solution: 23514624000
 
 ### Code
 
-TBD
 
+- [euler4.py](euler4.py)
+- [euler8.py](euler8.py)
+- [data_types.py](data_types.py) - Data types (list, tuple, dict)
+- [list_comprehension.py](list_comprehension.py) - List comprehension
+- [funcs.py](funcs.py) - Defining & calling functions
+- [sync.py](sync.py) - Working with files
 
 
 ### Exercises
@@ -106,24 +113,13 @@ slppp6.intermind.net - - [01/Aug/1995:00:00:11 -0400] "GET /history/skylab/skyla
 
 ### Links
 
-- Programming Exercises:
-    - [exercism](https://exercism.org/tracks/python/exercises)
-    - [LeetCode](https://leetcode.com/problemset/all/)
-    - [Codewars](https://www.codewars.com/kata)
-    - [Project Euler](https://projecteuler.net/archives)
-- [HTTP in cats](https://http.cat/)
-- [The Zen of Python](https://www.python.org/dev/peps/pep-0020/) (or `import this`)
 - [Year 2038 problem](https://en.wikipedia.org/wiki/Year_2038_problem)
 - [List comprehension](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions) in the Python tutorial
 - [Defining functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions) in the Python tutorial
 - [pathlib](https://docs.python.org/3/library/pathlib.html) module - Handling file paths
 - [shutil](https://docs.python.org/3/library/shutil.html) module - shell like utlities
-- [Context Managers and Python's "with" Statement](https://realpython.com/python-with-statement/)
-- [Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html) in the Python tutorial
-- [Modules](https://docs.python.org/3/tutorial/modules.html) in the Python tutorial
-- [JSON](https://www.json.org/json-en.html) specification
-- Python's [json](https://docs.python.org/3/library/json.html) module
-- [A typical HTTP session](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Session)
+- [mypy](https://mypy.readthedocs.io/en/stable/) - Static type checker
+- [Year 2038 problem](https://en.wikipedia.org/wiki/Year_2038_problem)
 
 ### Data & Other
 

@@ -92,4 +92,6 @@ fp.close()
 fp = open('data/prices.csv')  # 'rt' - the default
 # A "for loop" on an open file will return lines
 for line in fp:
-    print(line)
+    # print(line, end='')
+    # print(line.rstrip())
+    print(line[:-1])
