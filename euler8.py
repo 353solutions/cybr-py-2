@@ -43,3 +43,11 @@ for i in range(len(digits)-12):
         max_prod = prod
 # Output
 print(max_prod)
+
+# With list comprehension
+max_prod = max([
+    product(digits[i:i+13])
+    for i in range(len(digits)-12)
+])
+print(max_prod)
+

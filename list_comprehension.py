@@ -109,3 +109,33 @@ IBM,248.66
 MSFT,375.39
 TSLA,259.16
 '''
+
+# create dict symbol -> price
+current = {}
+for line in current_data.splitlines():
+    symbol, price = line.split(',')
+    current[symbol] = float(price)
+
+
+# How much does our portfolio worth?
+worth = sum([
+    trade['volume'] * current[trade['symbol']]
+    for trade in trades
+    # no filter
+])
+
+print(f'We are worth ${worth:,}')
+
+diff = worth - invested
+if diff > 0:
+    verb = 'gained'
+else:
+    verb = 'lost'
+
+print(f'We {verb} ${diff:,}')
+
+# There's also dict comprehension
+{i:i*i for i in range(10)}
+
+# and set comprehension
+{trade['symbol'] for trade in trades}
