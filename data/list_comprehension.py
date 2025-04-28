@@ -77,3 +77,35 @@ def parse_line(line):
 
 trades = [parse_line(line) for line in stocks_data.splitlines()]
 pprint(trades)
+
+# Print unique list of symbols
+# In Python unique means set
+print('We are invested in:')
+symbols = [trade['symbol'] for trade in trades]
+for symbol in sorted(set(symbols)):
+    print(f'- {symbol}')
+
+# How many stocks of CSCO do we own?
+num_csco = sum([
+    trade['volume'] 
+    for trade in trades 
+    if trade['symbol'] == 'CSCO'
+])
+print(f'We own {num_csco} stocks of CSCO')
+
+# How much money have we invested?
+
+invested = sum([
+    trade['volume'] * trade['price']
+    for trade in trades
+    # no filter
+])
+print(f'We invested ${invested:,}')
+
+current_data = '''\
+CSCO,61.71
+GOOG,156.23
+IBM,248.66
+MSFT,375.39
+TSLA,259.16
+'''
