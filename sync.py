@@ -51,6 +51,7 @@ def should_copy(src_file: Path, dest_file: Path):
     dest_mtime = dest_file.stat().st_mtime
     return src_mtime > dest_mtime
 
+
 # IRL: Use the "rsync" utility
 def sync(src: Path | str, dest: Path | str):
     """Copy new or non-existing files from src to dest"""
@@ -73,25 +74,5 @@ def sync(src: Path | str, dest: Path | str):
             dest_file.parent.mkdir(exist_ok=True, parents=True)
             copy(src_file, dest_file)
 
+
 sync('data', '/tmp/backup/data')
-
-
-# Open a file with open
-# Three ways to open a file
-# - r (read), default
-# - w (write), will truncate the file
-# - a (append)
-# There are two modes to open a file
-# fp = open('data/prices.csv')  # 'rt' - the default
-fp = open('data/unicode.png', 'rb')
-data = fp.read()
-print(type(data))  # str in 'rt' and bytes in 'rb'
-fp.close()
-
-
-fp = open('data/prices.csv')  # 'rt' - the default
-# A "for loop" on an open file will return lines
-for line in fp:
-    # print(line, end='')
-    # print(line.rstrip())
-    print(line[:-1])
