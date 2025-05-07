@@ -19,8 +19,9 @@
 # load: JSON -> Python
 # dump: Python -> JSON
 import json
-from urllib.request import urlopen
+from urllib.request import urlopen, Request
 from http import HTTPStatus
+from pprint import pprint
 # import requests
 
 event = {
@@ -66,6 +67,64 @@ with urlopen('https://api.github.com/users/tebeka') as fp:
     reply = json.load(fp)
 print(reply['login'])
 
+
 # Exercise: Write a function github_info(login)
 # And return a tuple with the user name (name), and number
 # of public repos (public_repos)
+def github_info(login):
+    # TODO: URL escape login
+    url = f'https://api.github.com/users/{login}'
+    with urlopen(url) as fp:
+        reply = json.load(fp)
+
+    name = reply['name']
+    num_repos = reply['public_repos']
+    return (name, num_repos)
+
+
+print(github_info('tebeka'))
+
+# REST API: HTTP + JSON
+
+# Acroynms:
+# URL: Uniform Resource Locator
+# HTTP: HyperText Transfer Protocol
+# JSON: JavaScript Object Notation
+# API: Application Programmable Interface
+# REST: REpresentational State Transfer
+# verbs: GET, POST, PUT, DELETE
+
+"""Client request
+
+POST /events HTTP/1.1
+Host: httpbin.org
+...
+
+{
+    "type": "access",
+    "login": "elliot",
+    "uri": "file:///etc/passwd"
+}
+"""
+
+body = {
+    'type': 'access',
+    'login': 'elliot',
+    'uri': 'file:///etc/password',
+}
+
+req = Request(
+    url='https://httpbin.org/post',
+    method='POST',
+    headers={
+        'Authorization': 'Bearer s3cr3t',
+        'Content-Type': 'application/json'
+    },
+    # data must by bytes, json.dumps returns str
+    data=json.dumps(body).encode(),
+)  # fmt: off
+
+with urlopen(req) as fp:
+    reply = json.load(fp)
+
+pprint(reply)
