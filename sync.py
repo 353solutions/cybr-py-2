@@ -56,7 +56,9 @@ def should_copy(src_file: Path, dest_file: Path):
 def sync(src: Path | str, dest: Path | str):
     """Copy new or non-existing files from src to dest"""
     src, dest = Path(src), Path(dest)
-    assert src.is_dir(), f'"{src}" does not exist or is not a directory'
+    # assert src.is_dir(), f'"{src}" does not exist or is not a directory'
+    if not src.is_dir():
+        raise ValueError(f'"{src}" does not exist or is not a directory')
 
     # if not src.is_dir():
     #     raise ValueError(f'"{src}" does not exist or is not a directory')
