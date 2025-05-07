@@ -138,6 +138,17 @@ slppp6.intermind.net - - [01/Aug/1995:00:00:11 -0400] "GET /history/skylab/skyla
 
 ### Code
 
+TBD
+
+
+### Exercises
+
+
+#### Stock Tweets
+
+Write a function `related_stocks(symbol)` that returns a list of stocks mentioned when you query this symbol on stocktweets.com.
+
+To find about `AAPL` use `https://api.stocktwits.com/api/2/streams/symbol/AAPL.json`
 
 
 ### Links
