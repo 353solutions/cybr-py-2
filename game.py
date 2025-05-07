@@ -14,8 +14,21 @@ class Player:
     # self is provided by Python, it is the current instance
     def __init__(self, name):
         self.name = name  # instance attribute, specific to the instance
-        self.num_players += 1
+        Player.num_players += 1
+        self.x, self.y = 0, 0
+        # self.num_players += 1  # BUG:
+        # self.num_players = self.num_players + 1
 
+    # method
+    def move(self, dx, dy):
+        self.x += dx
+        self.y += dy
+
+
+# Exercise:
+# Add a "keys" attribute to player, should start with empty set
+# Add a "found(key)" method that will add key to the keys attribute
+#   It should err is key is not one of 'jade', 'crystal', 'copper'
 
 # p1 is an instance of Player
 p1 = Player('Parzival')
@@ -23,6 +36,10 @@ print('p1:', p1)
 # p1.name = 'Parzival'
 print('name:', p1.name)
 print('game:', p1.game)
+
+p1.move(10, 20)  # p1.move is a "bound method"
+# Player.move(p1, 10, 20) # Works, but don't write code like that :)
+print('loc:', p1.x, p1.y)
 
 p2 = Player('Art3mis')
 # p2.name = 'Art3mis'
@@ -46,6 +63,7 @@ def find_attr(obj, name):
         print(f'found {name} in instance')
         return obj.__dict__[name]
 
+    # next look at the dict
     cls = obj.__class__
     if name in cls.__dict__:
         print(f'found {name} in class')
