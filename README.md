@@ -83,7 +83,6 @@ Solution: 23514624000
 
 ### Code
 
-
 - [euler4.py](euler4.py)
 - [euler8.py](euler8.py)
 - [data_types.py](data_types.py) - Data types (list, tuple, dict)
@@ -124,4 +123,37 @@ slppp6.intermind.net - - [01/Aug/1995:00:00:11 -0400] "GET /history/skylab/skyla
 ### Data & Other
 
 - [http.log.gz](data/http.log.gz)
+- `https://api.github.com/users/tebeka`
+
+# Day 3: Working with Python
+
+### Agenda
+
+- Error handling
+- Modules & packages (imports)
+- Calling REST APIs
+- OO Basics
+	- Classes and instances
+	- Methods
+	- Special methods
+	- Inheritance
+
+
+### Code
+
+
+
+### Links
+
+- [Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html) in the Python tutorial
+- [Modules](https://docs.python.org/3/tutorial/modules.html) in the Python tutorial
+- [JSON](https://www.json.org/json-en.html) specification
+- Python's [json](https://docs.python.org/3/library/json.html) module
+- [A typical HTTP session](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Session)
+- [Classes](https://docs.python.org/3/tutorial/classes.html) in the Python tutorial
+- [Beyond PEP8](https://www.youtube.com/watch?v=wf-BqAjZb8M)
+
+
+### Data & Other
+
 - `https://api.github.com/users/tebeka`
