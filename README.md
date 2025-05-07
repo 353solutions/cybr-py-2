@@ -138,7 +138,11 @@ slppp6.intermind.net - - [01/Aug/1995:00:00:11 -0400] "GET /history/skylab/skyla
 
 ### Code
 
-TBD
+- [files.py](files.py) - Using `with`
+- [kill_server.py](kill_server.py) - Error handling
+- [imports.py](imports.py) - Importing modules
+- [github.py](github.py) - Calling REST APIs
+- [game.py](game.py) - OO Basics
 
 
 ### Exercises
@@ -160,6 +164,8 @@ To find about `AAPL` use `https://api.stocktwits.com/api/2/streams/symbol/AAPL.j
 - [A typical HTTP session](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Session)
 - [Classes](https://docs.python.org/3/tutorial/classes.html) in the Python tutorial
 - [Beyond PEP8](https://www.youtube.com/watch?v=wf-BqAjZb8M)
+- [HTTP Cats](https://http.cat/)
+- [httpbin.org](https://httpbin.org/) - HTTP request & response service
 
 
 ### Data & Other

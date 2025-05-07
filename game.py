@@ -47,6 +47,9 @@ print('game:', p1.game)
 p1.move(10, 20)  # p1.move is a "bound method"
 # Player.move(p1, 10, 20) # Works, but don't write code like that :)
 print('loc:', p1.x, p1.y)
+p1.found('jade')
+p1.found('jade')
+print('keys:', p1.keys)
 
 p2 = Player('Art3mis')
 # p2.name = 'Art3mis'
