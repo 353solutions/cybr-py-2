@@ -18,11 +18,18 @@ class Player:
         self.x, self.y = 0, 0
         # self.num_players += 1  # BUG:
         # self.num_players = self.num_players + 1
+        self.keys = set()
 
     # method
     def move(self, dx, dy):
         self.x += dx
         self.y += dy
+
+    def found(self, key):
+        if key not in {'copper', 'jade', 'crystal'}:
+            raise ValueError(f'unknown key: {key!r}')
+
+        self.keys.add(key)
 
 
 # Exercise:
