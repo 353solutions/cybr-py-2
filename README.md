@@ -75,10 +75,6 @@ Solution: 23514624000
 - List comprehensions
 - Defining & calling functions
 - Working with files
-- Handling resources using `with`
-- Error handling
-- Modules & packages (imports)
-- Calling REST APIs
 
 
 ### Code
@@ -129,6 +125,7 @@ slppp6.intermind.net - - [01/Aug/1995:00:00:11 -0400] "GET /history/skylab/skyla
 
 ### Agenda
 
+- Handling resources using `with`
 - Error handling
 - Modules & packages (imports)
 - Calling REST APIs
