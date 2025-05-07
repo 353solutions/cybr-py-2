@@ -19,6 +19,9 @@
 # load: JSON -> Python
 # dump: Python -> JSON
 import json
+from urllib.request import urlopen
+from http import HTTPStatus
+# import requests
 
 event = {
     'action': 'start',
@@ -34,3 +37,35 @@ print('data type:', type(data))
 
 event2 = json.loads(data)
 print(event2['image'])
+
+"""
+$ curl -i https://api.github.com/users/tebeka
+HTTP/2 200  <<- Status line
+date: Wed, 07 May 2025 16:17:14 GMT <<- Header
+content-type: application/json; charset=utf-8
+...
+content-length: 1396
+
+{ <<- content/body
+  "login": "tebeka",
+  "id": 87697,
+  "node_id": "MDQ6VXNlcjg3Njk3",
+  "avatar_url": "https://avatars.githubusercontent.com/u/87697?v=4",
+  ...
+}
+"""
+
+# Will raise is status >= 400
+# Will follow redirect
+with urlopen('https://api.github.com/users/tebeka') as fp:
+    print('status:', fp.status)
+    # print(HTTPStatus.OK)
+
+    print('ctype:', fp.headers['Content-Type'])
+    # print('data:', fp.read(256))
+    reply = json.load(fp)
+print(reply['login'])
+
+# Exercise: Write a function github_info(login)
+# And return a tuple with the user name (name), and number
+# of public repos (public_repos)
