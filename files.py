@@ -1,3 +1,5 @@
+from pathlib import Path
+
 # Open a file with open
 # Three ways to open a file
 # - r (read), default
@@ -31,3 +33,13 @@ print('out:', fp.closed)
 # Exercise: print out file name and line number
 # in all chapters that contain the word Sherlock
 # $ grep -i -n Sherlock data/sherlock/*.txt
+
+# Get
+for file in Path('data/sherlock').glob('*.txt'):
+    with open(file) as fp:
+        for lnum, line in enumerate(fp, 1):
+            # Parse: NOP
+            # Analyze
+            if 'sherlock' in line.lower():
+                # Output
+                print(f'{file}:{lnum} {line}', end='')
