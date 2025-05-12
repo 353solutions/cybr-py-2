@@ -10,6 +10,7 @@ class Player:
     num_players = 0
 
     # dunder init is a method
+    # dunder methods are known as "special" (or "magic") methods
     # it's a special method, called on instance creation
     # self is provided by Python, it is the current instance
     def __init__(self, name):
@@ -19,6 +20,7 @@ class Player:
         # self.num_players += 1  # BUG:
         # self.num_players = self.num_players + 1
         self.keys = set()
+        self.health = 100
 
     # method
     def move(self, dx, dy):
@@ -30,6 +32,23 @@ class Player:
             raise ValueError(f'unknown key: {key!r}')
 
         self.keys.add(key)
+
+    # String representation for users
+    # def __str__(self):
+    #     return f'{self.name} at {self.x}/{self.y} holding {self.keys}'
+
+    # String representation for developers
+    # Usually a way to create such an object
+    # Write at least __repr__ in all your classes
+    def __repr__(self):
+        # self can be Player or any class that inherit from it
+        cls = self.__class__.__name__
+        return f'{cls}({self.name!r})'
+
+
+class Admin(Player):
+    def revive(self, other):
+        other.health = 100
 
 
 # Exercise:
@@ -62,6 +81,17 @@ print('num players:', p1.num_players)
 print(p1.__dict__)
 print(Player.__dict__)
 
+a1 = Admin('James')
+a1.revive(p1)
+
+
+def print_names(items: list[Player]):
+    for item in items:
+        print(item.name)
+
+
+print_names([p1, a1])
+
 
 def find_attr(obj, name):
     """Simulate attribute lookup.
@@ -79,13 +109,26 @@ def find_attr(obj, name):
         print(f'found {name} in class')
         return cls.__dict__[name]
 
+    # MRO: Method resolution order
+    # Flattened hierarchy
+    for parent in cls.__mro__:
+        if name in parent.__dict__:
+            print(f'found {name} in {parent.__name__}')
+            return parent.__dict__[name]
+
     raise AttributeError(name)
 
 
-find_attr(p1, 'name')
-find_attr(p1, 'game')
+find_attr(p1, 'name')  # instance
+find_attr(p1, 'game')  # class
+find_attr(a1, 'game')  # parent
 # find_attr(p1, 'color')  # AttributeError
 
 print(isinstance(p1, Player))  # True
 print(isinstance(p1, list))  # False
 # using isinstance is a "code smell"
+
+# Aside: str vs repr
+x, y = 1, '1'
+print(f'x={x}, y={y}')  # by default, print uses __str__
+print(f'x={x!r}, y={y!r}')
