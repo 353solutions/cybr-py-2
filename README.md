@@ -171,3 +171,46 @@ To find about `AAPL` use `https://api.stocktwits.com/api/2/streams/symbol/AAPL.j
 ### Data & Other
 
 - `https://api.github.com/users/tebeka`
+
+---
+
+# Day 4: Working with Python
+
+### Agenda
+
+- Calling REST APIs
+- OO Basics
+	- ~~Classes and instances~~
+	- ~~Methods~~
+	- Special methods
+	- Inheritance
+- Managing dependencies with pip
+- Tesing with pytest
+
+
+### Code
+
+TBD
+
+### Links
+
+- [Installing packages](https://packaging.python.org/en/latest/tutorials/installing-packages/)
+- [Using Python's pip to Manage Your Projects' Dependencies](https://realpython.com/what-is-pip/)
+- Other package managers
+    - [uv](https://astral.sh/blog/uv)
+    - [poetry](https://python-poetry.org/)
+    - [pipenv](https://pipenv.pypa.io/en/latest/)
+    - [conda](https://docs.conda.io/en/latest/)
+- [pytest](https://docs.pytest.org/en/stable/)
+- Linters
+    - [ruff](https://docs.astral.sh/ruff/)
+    - [flake8](https://flake8.pycqa.org/en/latest/)
+    - [pylint](https://www.pylint.org/) - need configuration
+    - [bandit](https://bandit.readthedocs.io/en/latest/) - security
+- [colab notebook](https://colab.research.google.com/drive/1zrdnYbUfH6Pklqd6ur2tT_msbFTvZH0S?usp=sharing)
+- [Beyond PEP8](https://www.youtube.com/watch?v=wf-BqAjZb8M)
+
+### Data & Other
+
+- [tokenize_cases.yml](data/tokenize_cases.yml)
+
