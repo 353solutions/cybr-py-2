@@ -178,7 +178,6 @@ To find about `AAPL` use `https://api.stocktwits.com/api/2/streams/symbol/AAPL.j
 
 ### Agenda
 
-- Calling REST APIs
 - OO Basics
 	- ~~Classes and instances~~
 	- ~~Methods~~
