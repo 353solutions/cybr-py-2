@@ -28,7 +28,7 @@ def test_tokenize():
     text = "Who's on first?"
     tokens = tokenizer.tokenize(text)
 
-    assert tokens == ['who', 's', 'on', 'first']
+    assert tokens == ['who', 'on', 'first']
 
 
 def test_stem():
@@ -44,6 +44,7 @@ stem_cases = [
     ('works', 'work'),
     ('work', 'work'),
     ('', ''),
+    ('s', ''),
 ]
 
 

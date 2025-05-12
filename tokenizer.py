@@ -13,7 +13,9 @@ def tokenize(text):
     tokens = []
     for word in re.findall(r'[a-zA-Z]+', text):
         token = word.lower()
-        tokens.append(token)
+        token = stem(token)
+        if token:
+            tokens.append(token)
 
     return tokens
 
