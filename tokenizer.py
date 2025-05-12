@@ -1,5 +1,8 @@
 import re
 
+# Exercise: Have tokenize return stemmed tokens
+# Make sure all tests pass
+
 
 def tokenize(text):
     """Return list of tokens (lower case) found in text.
