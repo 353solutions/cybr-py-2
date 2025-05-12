@@ -22,6 +22,11 @@ YMMV :)
     - $ ./.venv/bin/python -m pip install -r requirements-dev.txt
 
 
+On colab run:
+
+    %pip install requests
+
+
 ## Risks of using 3rd-party packages
 
 - Security
