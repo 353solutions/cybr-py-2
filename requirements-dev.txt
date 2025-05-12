@@ -1,0 +1,6 @@
+# Development requirements
+
+# include production requirements
+-r requirements.txt
+
+pytest == 8.3.*
