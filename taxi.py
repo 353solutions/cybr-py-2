@@ -92,3 +92,81 @@ df[mask]['trip_distance'].sum()
 # flow style
 
 # %%
+t = df['tpep_pickup_datetime'][0]
+t
+# %%
+
+# df['tpep_pickup_datetime'].year  # error
+df['tpep_pickup_datetime'].dt.year
+
+# Speical types:
+# dt: Timestamp
+# str: str (lower, upper, ...)
+# cat: categorial
+# sparse: ...
+# %%
+
+orig_df = df  # keep it around
+mask = (df['tpep_pickup_datetime'].dt.year == 2020) & (
+    df['tpep_pickup_datetime'].dt.month == 3
+)
+
+# df now is a "view" on the orignal df
+df = df[mask]
+print(len(orig_df), '->', len(df))
+
+# %%
+# df = df.dropna()
+# print(len(df))
+
+# %%
+# Cleaning data:
+# - drop invalid/missing
+# - fill with some value
+
+# Fill missing passenger count with 1
+
+mask = pd.isnull(df['passenger_count'])
+# df[mask]['passenger_count'] = 1 # BUG: Changing a view
+df.loc[mask, 'passenger_count'] = 1
+
+# %% Calculate the average speed in mph
+duration = df['tpep_dropoff_datetime'] - df['tpep_pickup_datetime']
+duration.describe()
+# %%
+mask = df['tpep_dropoff_datetime'] < df['tpep_pickup_datetime']
+mask.sum()  # See how many rows are bad
+df = df[~mask]
+# %%
+
+duration = df['tpep_dropoff_datetime'] - df['tpep_pickup_datetime']
+duration.describe()
+# %% Duration outliers
+duration[duration > duration.quantile(0.99)]
+# %% Clean rides above 2 hours
+mask = (df['tpep_dropoff_datetime'] - df['tpep_pickup_datetime']) < pd.Timedelta('2h')
+(~mask).sum()
+
+# %%
+df = df[mask]
+duration = df['tpep_dropoff_datetime'] - df['tpep_pickup_datetime']
+duration.describe()
+# %%
+# df['trip_distance'] / duration # error
+duration_hours = duration / pd.Timedelta('1h')
+speed_mph = df['trip_distance'] / duration_hours
+speed_mph.mean()
+
+# %%
+
+mask = (df['tpep_dropoff_datetime'] - df['tpep_pickup_datetime']) > pd.Timedelta('1min')
+(~mask).sum()
+df = df[mask]
+# %%
+
+duration = df['tpep_dropoff_datetime'] - df['tpep_pickup_datetime']
+duration_hours = duration / pd.Timedelta('1h')
+speed_mph = df['trip_distance'] / duration_hours
+speed_mph.mean()
+# %% Exercise: What is the median tip percent
+# for rides above 1 mile?
