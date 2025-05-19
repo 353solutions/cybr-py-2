@@ -1,6 +1,9 @@
 # python -m pip install pandas pyarrow
 
 # %%
+!curl -LO https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2020-03.parquet
+
+# %%
 import pandas as pd
 
 df = pd.read_parquet('yellow_tripdata_2020-03.parquet')
@@ -170,3 +173,46 @@ speed_mph = df['trip_distance'] / duration_hours
 speed_mph.mean()
 # %% Exercise: What is the median tip percent
 # for rides above 1 mile?
+tip_pct = df['tip_amount'] / df['total_amount'] * 100
+mask = df['trip_distance'] > 1
+tip_pct[mask].median()
+# %%
+df['tpep_pickup_datetime'][:5]
+# %%
+date = df['tpep_pickup_datetime'].dt.floor('D')
+date[:5]
+# %%
+# In groupby you can specify
+# - column name (str)
+# - Series of values
+df.groupby(date)['VendorID'].count()
+
+# %%
+%pip install matplotlib
+
+# %%
+(
+    df.groupby(date)['VendorID']  # pick one column for count
+    .count()
+    .plot.bar(title='rides per day')
+);
+
+# Use ; at end of cell to remove <Axis...> output
+# %%
+# Use box plot to get a quick understanding
+# of value ranges
+df = df[df['trip_distance'] < 10]
+df['trip_distance'].plot.box();
+# %%
+%pip install plotly
+
+# %%
+import plotly.express as px
+
+by_date = (
+    df.groupby(date)['VendorID']  # pick one column for count
+    .count()
+)
+px.bar(by_date)
+# %% Exercise: Draw a bar chart
+# of tip amount per number of passengers
