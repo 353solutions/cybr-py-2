@@ -217,3 +217,44 @@ TBD
     - `!curl -LO https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2020-03.parquet`
     - `./.venv/bin/python -m pip install pyarrow`
 - [NYC_Weather_2016_2022.csv.gz](data/NYC_Weather_2016_2022.csv.gz)
+
+# Day 5: Data Analsys with Pandas
+
+## Agenda
+
+- Pandas overview
+- Loading data
+- Selecting data
+- Running calculations
+- Grouping data
+- Cleaning data
+- Visualization
+
+### Code
+
+- [taxi.py](taxi.py)
+
+### Links
+
+- [Pandas](https://pandas.pydata.org/)
+    - [10 minutes to pandas](https://pandas.pydata.org/docs/user_guide/10min.html)
+    - [Indexing and selecting data](https://pandas.pydata.org/docs/user_guide/indexing.html)
+    - [Group by: split-apply-combine](https://pandas.pydata.org/docs/user_guide/groupby.html)
+- Visualization
+    - [matplotlib](https://matplotlib.org/)
+    - [plotly](https://plotly.com/python/)
+- [NYC Taxi](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+- [Kaggle](https://www.kaggle.com/) - Data science competitions
+- [VSCode Jupyter Extension](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
+- [Magic commands](https://ipython.readthedocs.io/en/stable/interactive/magics.html)
+    - e.g. `%timeit 2 ** 1000`
+- [PyCon Israel](https://pycon.org.il/2025/)
+
+### Data & Other
+
+- [tokenize_cases.yml](data/tokenize_cases.yml)
+- [March 2020 Yellow Taxi Trip Records](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2020-03.parquet)
+    - [Data Dictionary - Yellow](https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2020-03.parquet)
+    - `!curl -LO https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2020-03.parquet`
+    - `./.venv/bin/python -m pip install pyarrow`
+- [NYC_Weather_2016_2022.csv.gz](data/NYC_Weather_2016_2022.csv.gz)
