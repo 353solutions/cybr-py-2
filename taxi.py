@@ -245,7 +245,82 @@ vendor_names = {
 
 # df['VendorID'].apply(vendor_names.get)
 # Special case for maps
-df['VendorID'].map(vendor_names)
+df['vendor'] = df['VendorID'].map(vendor_names)
+df['vendor'].value_counts()
 
 
 # %%
+df['VendorID'].memory_usage(deep=True) / 1_000_000
+
+# %%
+df['vendor'].memory_usage(deep=True) / 1_000_000
+
+# %% Categorical data: small number of values (nunique is small)
+df['vendor_name'] = df['vendor'].astype('category')
+df['vendor_name'][:10]
+# %%
+df['vendor_name'].memory_usage(deep=True) / 1_000_000
+
+# %%
+len(df[df['vendor_name'] == 'Creative'])
+
+# %%
+# Median number of rides per week day?
+
+# Add 2 auxiliary columns
+df['weekday'] = df['tpep_pickup_datetime'].dt.weekday
+df['date'] = df['tpep_pickup_datetime'].dt.floor('D')
+# Will generate a series with multi-index
+# by_date = df.groupby(['date', 'weekday'])['VendorID'].count()
+# Generate dataframe
+by_date = (
+    df.groupby(['date', 'weekday'], as_index=False)
+    ['VendorID']
+    .count()
+)
+
+# %%
+wday_median = (
+    by_date.groupby('weekday')
+    ['VendorID']
+    .median()
+)
+
+# %%
+# px.bar(wday_median)
+ax = wday_median.plot.bar(rot=0)
+ax.set_xticklabels(['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'])
+ax.set_ylabel('Median Number of Rides');
+
+
+# %%
+wdf = pd.read_csv(
+    'data/NYC_Weather_2016_2022.csv.gz',
+    parse_dates=['time'],
+)
+wdf.dtypes
+# %%
+wdf.sample(5)
+
+# %%
+wdf['date'] = wdf['time'].dt.floor('D')
+daily_weather = wdf.groupby('date').mean()
+daily_weather.head(10)
+
+# %%
+df_weather = pd.merge(
+    df, daily_weather,
+    left_on='date',
+    right_on='date',
+    how='left'
+)
+df_weather.head(10)
+
+# %% DataFrames are slow in appending/adding datat
+from pathlib import Path
+
+frames = [] # Python list, fast in append
+for name in Path('.').glob('*.parquet'):
+    df = pd.read_parquet(name)
+    frames.append(df)
+df = pd.concat(frames, ignore_index=True)
