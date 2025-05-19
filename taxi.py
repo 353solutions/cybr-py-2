@@ -215,4 +215,37 @@ by_date = (
 )
 px.bar(by_date)
 # %% Exercise: Draw a bar chart
-# of tip amount per number of passengers
+# of median tip amount per number of passengers
+tip_by_passengers = (
+    df.groupby('passenger_count')
+    ['tip_amount']
+    .median()
+)
+
+px.bar(tip_by_passengers)
+# %%
+(
+    df.groupby('VendorID')
+    ['VendorID']
+    .count()
+    .sort_values(ascending=False)
+)
+
+# %%
+# This is like above groupby
+df['VendorID'].value_counts()
+
+# %%
+vendor_names = {
+    1: 'Creative',
+    2: 'Curb',
+    6: 'Myle',
+    5: 'Helix'  # 7 in the schema
+}
+
+# df['VendorID'].apply(vendor_names.get)
+# Special case for maps
+df['VendorID'].map(vendor_names)
+
+
+# %%
